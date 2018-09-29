@@ -21,3 +21,34 @@ The code need to state **three questions of purpose**, in order of importance:
 ### Updating code
 
 ### Deleting code
+All code has an upkeep cost. If we optimize for deletion, it means that we encourage a low upkeep of our code, and spend less time updating code with low business value.
+
+A function can be deleted if you know that noone is calling that function. Your challange is to make it easier to track code usage.
+
+An example where it is easier to create code than deleting is a classic MVC structure:
+```
+/models
+-- user-model.ts
+-- company-model.ts
+/views
+-- user-view.ts
+-- company-view.ts
+/controllers
+-- user-controller.ts
+-- company-controller.ts
+```
+It's easy to figure out where to create your code, but harder to know if a model can be deleted safely.
+
+Here's an alternative that's more modular, making it easy to delete code:
+```
+/user
+-- index.ts
+-- model.ts
+-- view.ts
+-- controller.ts
+/company
+-- index.ts
+-- model.ts
+-- view.ts
+-- controller.ts
+```
