@@ -53,6 +53,12 @@ The entry point for a module is `/index.ts`.
 The file starts with a code comment about **why** it exists.
 It then imports private submodules, followed by the exports of the public API that says **what** it does.
 
+a minimal example could be:
+
+```
+/* The users module handles the users data */
+```
+
 ## Testing.
 
 - Arrange, Act, Assert.
